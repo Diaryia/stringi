@@ -24,5 +24,12 @@ main ()
   cout << zdanie.substr (10, 4) << endl;	// funkcja sub string od ktC3rego indeksu chcemy zeby funkcja odczytac dany znak
   //od znaku 10 ma wypisac 4 indeksu
   cout << zdanie.length () << endl;	// ilosc znakC3w
+   cout<<zdanie.size()<<endl; //ilosc znakow
+  
+  cout<<zdanie.max_size()<<endl;
+  
+  zdanie.resize(9); // ucina ciag znaków od 9
+  cout<<zdanie<<endl;
+  
   return 0;
 }
