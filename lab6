@@ -1,0 +1,49 @@
+
+//ex2.
+//You should use [] when you are certain that no "out-of bounds" access will happen.
+//You should use at() when "out of bounds" access may happen and you are prepared to either deal with that (by catching the exception and doing something sensible)
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main(){
+   
+  string txt;
+  txt = " real message!!!";	// overloaded operator =
+  cout << txt << endl;
+	
+  if (txt == "real message!!!") {
+    cout << "comparison with use of the overloaded operator"
+         << endl;
+  } else {
+    cout << "!@#$% ???" << endl;
+  }
+		
+  cout << "text size =" << txt.size() << endl;
+  cout << "Where is NULL???" << endl;
+	
+  for (int i = 0; i < txt.size(); i++) {
+    cout << txt.at(i) << endl;
+    /* cout << txt[i] << endl;
+       alternative, but using .at() is safer */
+  }
+	
+  string txt2(" Find out what will happen with the message.");
+  
+  txt.append(txt2).append(" One more message?");
+  cout << txt << endl;
+  txt.replace
+    (txt.find("message!!!"),
+     string("message!!!").length(),
+     "MESSAGE!!!");
+
+
+  txt.replace
+    (txt.find("message"), string("message").length(), "real MESSAGE");
+
+  txt.replace
+    (txt.find("real MESSAGE"), string("real MESSAGE").length(),"original MESSAGE");
+
+   cout << txt << endl;
+  }
